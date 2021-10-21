@@ -4,12 +4,43 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.uzlahpri.dzikirapp.MainActivity
 import com.uzlahpri.dzikirapp.R
+import com.uzlahpri.dzikirapp.adapter.DzikirDoaAdapter
+import com.uzlahpri.dzikirapp.databinding.ActivityPetangBinding
+import com.uzlahpri.dzikirapp.model.DataDzikirDoa
+import com.uzlahpri.dzikirapp.model.DzikirDoa
 
 class PetangActivity : AppCompatActivity() {
+    private lateinit var petangBinding : ActivityPetangBinding
+    private var listDzikirDoa : ArrayList<DzikirDoa> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_petang)
+        petangBinding = ActivityPetangBinding.inflate(layoutInflater)
+        setContentView(petangBinding.root)
+        supportActionBar?.hide()
+        showRecyclerList()
+        back()
+    }
+
+    private fun back() {
+        petangBinding.ivBackPetang.setOnClickListener{
+            startActivity(DzikirPagiPetangActivity.getLaunchService(this))
+        }
+    }
+    private fun showRecyclerList() {
+        listDzikirDoa.clear()
+        listDzikirDoa.addAll(DataDzikirDoa.listDzikirPetang)
+        petangBinding.rvDzikirPetang.setHasFixedSize(true)
+        petangBinding.rvDzikirPetang.layoutManager = LinearLayoutManager(this)
+        petangBinding.rvDzikirPetang.adapter = DzikirDoaAdapter(listDzikirDoa)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     companion object {

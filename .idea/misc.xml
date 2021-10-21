@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_detail_artikel.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_dzikir_harian.xml" value="0.2" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_dzikir_pagi_petang.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_dzikir_setiap_saat.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_main.xml" value="0.14719202898550723" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_pagi.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_petang.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_qauliyah.xml" value="0.264" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/UZL/Documents/IDN stuff/Kelas 11/Mobile Programming/DzikirApp/app/src/main/res/layout/item_doa.xml" value="0.4" />

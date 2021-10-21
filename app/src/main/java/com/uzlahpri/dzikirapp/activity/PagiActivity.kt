@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.uzlahpri.dzikirapp.MainActivity
 import com.uzlahpri.dzikirapp.R
 import com.uzlahpri.dzikirapp.adapter.DzikirDoaAdapter
 import com.uzlahpri.dzikirapp.databinding.ActivityPagiBinding
@@ -19,10 +20,16 @@ class PagiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         pagiBinding = ActivityPagiBinding.inflate(layoutInflater)
         setContentView(pagiBinding.root)
-
+        supportActionBar?.hide()
         showRecyclerList()
+        back()
     }
 
+    private fun back() {
+        pagiBinding.ivBackPagi.setOnClickListener{
+            startActivity(DzikirPagiPetangActivity.getLaunchService(this))
+        }
+    }
     private fun showRecyclerList() {
         pagiBinding.rvDzikirPagi.setHasFixedSize(true)
         listDzikirPagi.clear()
@@ -32,7 +39,7 @@ class PagiActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        finish()
         return super.onSupportNavigateUp()
     }
 

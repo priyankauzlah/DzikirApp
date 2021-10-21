@@ -1,8 +1,11 @@
 package com.uzlahpri.dzikirapp.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.uzlahpri.dzikirapp.MainActivity
 import com.uzlahpri.dzikirapp.R
 import com.uzlahpri.dzikirapp.databinding.ActivityDzikirPagiPetangBinding
 import com.uzlahpri.dzikirapp.model.DzikirDoa
@@ -15,13 +18,20 @@ class DzikirPagiPetangActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         pagiPetangBinding = ActivityDzikirPagiPetangBinding.inflate(layoutInflater)
         setContentView(pagiPetangBinding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
+        back()
 
         pagiPetangBinding.cvDzikirPagi.setOnClickListener(this)
         pagiPetangBinding.cvDzikirPetang.setOnClickListener(this)
         pagiPetangBinding.btnDzikirPagi.setOnClickListener(this)
         pagiPetangBinding.btnDzikirPetang.setOnClickListener(this)
 
+    }
+
+    private fun back() {
+        pagiPetangBinding.ivBackDzikirPagiPetang.setOnClickListener {
+            startActivity(MainActivity.getLaunchService(this))
+        }
     }
 
     override fun onClick(p0: View?) {
@@ -33,8 +43,15 @@ class DzikirPagiPetangActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    companion object {
+        fun getLaunchService(from: Context) =
+            Intent(from, DzikirPagiPetangActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            }
+    }
+
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
+        finish()
         return super.onSupportNavigateUp()
     }
 }

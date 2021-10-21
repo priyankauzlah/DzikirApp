@@ -22,11 +22,12 @@ class DzikirHarianActivity : AppCompatActivity() {
         dzikirHarianBinding = ActivityDzikirHarianBinding.inflate(layoutInflater)
         setContentView(dzikirHarianBinding.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
         setContentView(dzikirHarianBinding.root)
 
         showRecyclerList()
         initData()
+        back()
     }
 
     private fun initData() {
@@ -58,5 +59,11 @@ class DzikirHarianActivity : AppCompatActivity() {
             Intent(from, DzikirHarianActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             }
+    }
+
+    private fun back() {
+        dzikirHarianBinding.ivBackDzikirHarian.setOnClickListener {
+            startActivity(MainActivity.getLaunchService(this))
+        }
     }
 }
